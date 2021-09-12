@@ -21,12 +21,6 @@ import skimage.io as io
 import torch
 import tables
 
-import sys
-
-# print(os.getcwd())  # bash pwd
-# print(sys.path)  # file path
-# sys.path.append(os.path.join(sys.path[0], '..'))
-
 # command line arguments parser
 parser = argparse.ArgumentParser(
     description="used to generate pre processed PASCAL-S data"
@@ -72,15 +66,6 @@ fixation_path = os.path.join(
 
 # total write path
 write_path = os.path.join(config["writepath"])
-
-# check write path
-# if not os.path.exists(write_path):
-#     try:
-#         os.makedirs(write_path)
-#     except Exception as e:
-#         print(e)
-#         print('Wrong write path and can not create it.')
-#         exit(1)
 
 # set suffix
 image_suffix = ".jpg"
