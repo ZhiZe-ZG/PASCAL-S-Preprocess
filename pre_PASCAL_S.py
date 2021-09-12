@@ -6,6 +6,7 @@ simple trans origin data into torch tensor files
 usage:
 python pre_PASCAL_S.py -r './salObj' -w './Out_PASCAL_S'
 for each output file:
+    name: means the name of the data
     image: means origin image
     saliency: means PASCAL-S saliency map
     full_seg: means PASCAL-S full segmentation
@@ -137,6 +138,7 @@ TR_stream = map(lambda n: TR_reader(n), data_names)
 def save_file(name: str, image: Any, mask: Any, full_seg: Any, fixation: Any) -> None:
     print(f"processing... {name} ")
     data_dict = {
+        "name": name,
         "image": image,
         "saliency": mask,
         "full_seg": full_seg,
